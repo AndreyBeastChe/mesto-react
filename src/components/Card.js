@@ -1,10 +1,10 @@
-function Card({ card, onCardClick }) {
+function Card({ key, card, onCardClick }) {
   function handleClick() {
     onCardClick(card);
   }
 
   return (
-    <li className="place">
+    <li className="place" key={key}>
       <img
         className="place__foto"
         style={{ backgroundImage: `url(${card.link})` }}
@@ -15,7 +15,7 @@ function Card({ card, onCardClick }) {
         <h2 className="place__title">{card.name}</h2>
         <div className="place__like-place">
           <button type="button" className="place__like" />
-          <span className="place__like-count">0</span>
+          <span className="place__like-count">{card.likes.length}</span>
         </div>
       </div>
     </li>

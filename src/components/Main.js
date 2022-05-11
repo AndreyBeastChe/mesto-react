@@ -3,20 +3,28 @@ import React, { useState } from "react";
 import Card from "./Card";
 
 function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
-  let [userName, setUserName] = useState();
-  let [userDescription, setUserDescription] = useState();
-  let [userAvatar, setUserAvatar] = useState();
-  let [cards, setCards] = React.useState([]);
+  const [userName, setUserName] = useState("");
+  const [userDescription, setUserDescription] = useState("");
+  const [userAvatar, setUserAvatar] = useState("");
+  const [cards, setCards] = React.useState([]);
 
-  api.getUser().then((res) => {
-    setUserName(res.name);
-    setUserDescription(res.about);
-    setUserAvatar(res.avatar);
-  });
+  React.useEffect(() => {
+    api
+      .getUser()
+      .then((res) => {
+        setUserName(res.name);
+        setUserDescription(res.about);
+        setUserAvatar(res.avatar);
+      })
+      .catch((err) => console.log("Ошибка получения пользователя" + err));
 
-  api.gerCards().then((cards) => {
-    setCards(cards);
-  });
+    api
+      .gerCards()
+      .then((cards) => {
+        setCards(cards);
+      })
+      .catch((err) => console.log("Ошибка получения карточек" + err));
+  }, []);
 
   return (
     <main className="content">
@@ -46,7 +54,7 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
       <section className="places">
         <ul className="places__grid">
           {cards.map((card) => (
-            <Card card={card} onCardClick={onCardClick} />
+            <Card key={card._id} card={card} onCardClick={onCardClick} />
           ))}
         </ul>
       </section>

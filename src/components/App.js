@@ -52,31 +52,29 @@ function App() {
         name="edit"
         onClose={closeAllPopups}
       >
-        <div>
-          <div className="popup__field">
-            <input
-              required
-              minLength={2}
-              maxLength={40}
-              type="text"
-              className="popup__input popup__input_type_name"
-              name="nameInput"
-              id="name"
-            />
-            <span id="name-error" className="popup__error" />
-          </div>
-          <div className="popup__field">
-            <input
-              required
-              minLength={2}
-              maxLength={200}
-              type="text"
-              className="popup__input popup__input_type_profession"
-              name="jobInput"
-              id="job"
-            />
-            <span id="job-error" className="popup__error" />
-          </div>
+        <div className="popup__field">
+          <input
+            required
+            minLength={2}
+            maxLength={40}
+            type="text"
+            className="popup__input popup__input_type_name"
+            name="nameInput"
+            id="name"
+          />
+          <span id="name-error" className="popup__error" />
+        </div>
+        <div className="popup__field">
+          <input
+            required
+            minLength={2}
+            maxLength={200}
+            type="text"
+            className="popup__input popup__input_type_profession"
+            name="jobInput"
+            id="job"
+          />
+          <span id="job-error" className="popup__error" />
         </div>
       </PopupWithForm>
       <PopupWithForm
@@ -85,31 +83,29 @@ function App() {
         name="new-card"
         onClose={closeAllPopups}
       >
-        <div>
-          <div className="popup__field">
-            <input
-              required
-              minLength={2}
-              maxLength={30}
-              type="text"
-              className="popup__input popup__input_type_place"
-              name="placeInput"
-              placeholder="Название"
-              id="new-place"
-            />
-            <span id="new-place-error" className="popup__error" />
-          </div>
-          <div className="popup__field">
-            <input
-              required
-              type="url"
-              className="popup__input popup__input_type_link"
-              name="linkInput"
-              placeholder="Ссылка на картинку"
-              id="link"
-            />
-            <span id="link-error" className="popup__error" />
-          </div>
+        <div className="popup__field">
+          <input
+            required
+            minLength={2}
+            maxLength={30}
+            type="text"
+            className="popup__input popup__input_type_place"
+            name="placeInput"
+            placeholder="Название"
+            id="new-place"
+          />
+          <span id="new-place-error" className="popup__error" />
+        </div>
+        <div className="popup__field">
+          <input
+            required
+            type="url"
+            className="popup__input popup__input_type_link"
+            name="linkInput"
+            placeholder="Ссылка на картинку"
+            id="link"
+          />
+          <span id="link-error" className="popup__error" />
         </div>
       </PopupWithForm>
 
@@ -119,8 +115,7 @@ function App() {
         name="user"
         onClose={closeAllPopups}
       >
-        <div>
-          div class="popup__field"&gt;
+        <div className="popup__field">
           <input
             required
             type="url"
