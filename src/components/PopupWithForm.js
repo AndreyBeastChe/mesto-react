@@ -1,5 +1,5 @@
 import React from "react";
-function PopupWithForm({ title, name, children, isOpen, onClose }) {
+function PopupWithForm({ title, name, children, isOpen, onClose, onSubmit }) {
   React.useEffect(() => {
     if (!isOpen) return;
   }, [isOpen, onClose]);
@@ -8,7 +8,12 @@ function PopupWithForm({ title, name, children, isOpen, onClose }) {
     <div className={`popup popup_type_${name} ${isOpen ? "popup_opened" : ""}`}>
       <div className="popup__container">
         <button type="button" className="popup__close" onClick={onClose} />
-        <form className="popup__content" name={name} noValidate="">
+        <form
+          className="popup__content"
+          name={name}
+          onSubmit={onSubmit}
+          noValidate=""
+        >
           <h3 className="popup__title">{title}</h3>
           {children}
 

@@ -22,6 +22,8 @@
 @import url(./blocks/place/__rectangle/place__rectangle.css);
 @import url(./blocks/place/__foto/place__foto.css);
 @import url(./blocks/place/__delete/place__delete.css);
+@import url(./blocks/place/__delete/_visible/place__delete_visible.css);
+@import url(./blocks/place/__delete/_hidden/place__delete_hidden.css);
 @import url(./blocks/place/__title/place__title.css);
 @import url(./blocks/place/__like-place/place__like-place.css);
 @import url(./blocks/place/__like/place__like.css);

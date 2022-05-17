@@ -38,6 +38,7 @@ class Api {
     }
   
     changeAvatar(avatar) {
+      debugger
       return fetch(`${this._url}/${this._groupId}/users/me/avatar`, {
         method: "PATCH",
         headers: this._headers,
@@ -45,15 +46,9 @@ class Api {
       }).then(this._checkResponse);
     }
   
-    likeCard(cardId) {
+    likeCard(cardId, isLiked) {
       return fetch(`${this._url}/v1/${this._groupId}/cards/${cardId}/likes`, {
-        method: "PUT",
-        headers: this._headers,
-      }).then(this._checkResponse);
-    }
-    dislikeCard(cardId) {
-      return fetch(`${this._url}/v1/${this._groupId}/cards/${cardId}/likes`, {
-        method: "DELETE",
+        method: isLiked ? 'PUT' : 'DELETE',
         headers: this._headers,
       }).then(this._checkResponse);
     }
