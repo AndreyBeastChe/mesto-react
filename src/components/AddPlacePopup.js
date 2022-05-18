@@ -12,6 +12,8 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
       name: place,
       link: link,
     });
+    setPlace("")
+    setLink("")
   }
 
   function handleChange(e) {
@@ -38,6 +40,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
           name="placeInput"
           placeholder="Название"
           id="new-place"
+          value = {place}
           onChange={handleChange}
         />
         <span id="new-place-error" className="popup__error" />
@@ -50,6 +53,7 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
           name="linkInput"
           placeholder="Ссылка на картинку"
           id="link"
+          value = {link}
           onChange={handleChange}
         />
         <span id="link-error" className="popup__error" />
