@@ -6,7 +6,6 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
   const [link, setLink] = React.useState("");
 
   function handleSubmit(e) {
-    debugger;
     e.preventDefault();
     onAddPlace({
       name: place,
